@@ -1,25 +1,42 @@
-*{
-    padding:0;
-    margin:0;
-     font-family: 'Poppins', sans-serif;
-     font-weight:500;
+.Toastify__toast {
+  border-radius: 12px;
+  background: rgba(15, 15, 20, 0.95);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  color: var(--text-light);
+  font-family: var(--font-main);
 }
 
- .Toastify__toast{
-        border-radius: 10px;
-    }
-@media only screen and (max-width:480px){
-   
-    .Toastify__toast{
-        border-radius: 10px;
-    }
+.Toastify__toast-theme--dark {
+  background: rgba(15, 15, 20, 0.95);
+}
 
-    
-   .Toastify__toast-container{
-       padding:0px;
-       left:auto;
-       top:2%;
-       right:3% ;
-    }
+@media only screen and (max-width: 480px) {
+  .Toastify__toast {
+    border-radius: 12px;
+  }
+  
+  .Toastify__toast-container {
+    padding: 0px;
+    left: auto;
+    top: 2%;
+    right: 3%;
+  }
+}
 
+/* Common utility classes */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  box-shadow: var(--glass-glow);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

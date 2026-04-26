@@ -1,312 +1,319 @@
-.container{
-    background-color: black;
-    color: whitesmoke;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.nav{
-    position: fixed;
-    top:0%;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    width: 100%;
-    backdrop-filter: blur(5px);
-}
-.nav h1{
-    background:linear-gradient(to right,#0061ff,#60efffd1);
-    -webkit-background-clip: text;
-    color: transparent;
-    padding: 3px 6px;
-    font-weight: bold;
-    
-}
-.nav button{
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50px;
-    margin: 5px 10px ;
-    font-weight: 600;
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.3s ease;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
-.bg{
-    margin-top:60px;
-    width:25%
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(5, 5, 8, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
 }
 
-.nav button:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px honeydew;
-}
-.nav button:active{
-    transform: scale(0.95);
-    box-shadow: 0px 0px 10px honeydew;
-}
-
-.core{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    width: 90%;
-    height: 90%;
+.nav h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
 }
 
-.core h1{
-    text-align: left;
-    padding: 5px 10px;
-    background:linear-gradient(to right,#0061ff ,#60efffd1 );
-    -webkit-background-clip: text;
-    color: transparent;
-    width: 100%;
-    font-weight: 600;
-
+.nav button {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(112, 0, 255, 0.2));
+  border: 1px solid var(--primary);
+  color: var(--text-light);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
 }
+
+.nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(112, 0, 255, 0.3));
+}
+
+.nav button:active {
+  transform: translateY(1px);
+}
+
+.bg {
+  width: 300px;
+  max-width: 80%;
+  margin-top: 100px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.3));
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 800px;
+  text-align: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  margin-top: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.core h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--primary), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .core p {
-    text-align: justify;
-    padding: 5px 10px;
-    margin: 10px 0px;
-    width: 100%;
-}
-.btncontainer{
-    margin: 20px 0px ;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 600px;
 }
 
+.btncontainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .btncontainer button {
-    padding: 10px 20px ;
-    font-weight: 600;
-    border: none;
-    border-radius: 30px;
-    margin: 15px 10px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.btncontainer button:hover:not(:disabled) {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px honeydew;
-
-
-}
-.btncontainer button:active:not(:disabled) {
-    transform: scale(0.95);
-    box-shadow: 0px 0px 0px honeydew;
-
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
 }
 
-.btncontainer button:disabled{
-    cursor: not-allowed;
-    background-color:rgb(137, 137, 137) ;
-    color: rgb(59, 59, 59);
+.btncontainer button:first-child {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  box-shadow: 0 0 20px rgba(112, 0, 255, 0.4);
 }
 
-.profile{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right,#0061ff ,#60efffd1 );
-    padding: 5px;
-    margin: 5px 10px;
-    color: black;
-    font-weight: bold;
-    line-height: 0px;
-    cursor: pointer;
-    text-align: center;
-    transition: 0.15s;
-    border-radius: 50px;
-    aspect-ratio: 1;
-    height: 25px;
+.btncontainer button:first-child:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
 }
 
-.profile:hover{
-    transform: scale(1.05);
-    background: linear-gradient(to right,#0062ffd4 ,#60efffa6 );
-    box-shadow: 0px 0px 15px #0061ff;
-
-}
-.profile:active{
-    transform: scale(0.95);
-
+.btncontainer button:last-child {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
 }
 
-
-
-.profilemenu{
-    position:fixed;
-    top:60px;
-    right: 10px;
-    background-color:#1a1a1ad5;
-    backdrop-filter: blur(4px);
-    border-radius: 20px;
-    overflow: hidden;
-    animation: slide 0.3s linear 1;
+.btncontainer button:last-child:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
 }
 
-.delcontainer{
-    height: 100%;
-    width: 100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index: 3;
-    display: none;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    backdrop-filter: blur(16px);
+.btncontainer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-.confirmcontainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px;
-    box-shadow: 0px 0px 3px whitesmoke;
-    backdrop-filter: blur(50px);
-    background-color: rgba(255, 255, 255, 0.048);
-    padding: 10px;
-    text-align: center;
-    border-radius: 20px;
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(112, 0, 255, 0.4);
 }
 
-.confirmcontainer p{
-    margin: 10px 5px;
-}
-.confirmationbtns{
-    padding: 10px;
-    margin: 15px 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+.profile:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
 }
 
-.confirmdel{
-
-    border: none;
-    padding: 3px 10px;
-    background-color: red;
-    border-radius: 20px;
-    transition: 0.15s;
-    font-weight: 600;
+.profilemenu {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  width: 220px;
+  background: rgba(15, 15, 20, 0.9);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  overflow: hidden;
+  animation: slideDown 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 99;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.notnow{
-    border: none;
-    padding: 3px 10px;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: 0.15s;
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.confirmdel:hover:not(:disabled),.notnow:hover:not(:disabled){
-    cursor: pointer;
-    transform: scale(1.05);
-}
-.confirmdel:active:not(:disabled),.notnow:active:not(:disabled){
-    transform: scale(0.95);
-}
-.notnow:hover:not(:disabled){
-    background-color: rgb(192, 190, 190);
-   
-}
-.confirmdel:hover:not(:disabled){
-    background-color: rgb(203, 5, 5);
-   
-}
-
-
-
-@keyframes slide {
-    0%{
-        right:-40%;
-    }
-
-    100%{
-        right: 10px;
-    }
-   
-
-}
 .profilemenu h2 {
-    text-align: center;
-    color: transparent;
-    padding: 10px  10px 10px 10px;
-    background: linear-gradient(to right,#0061ff ,#60efffd1 );
-    -webkit-background-clip: text;
-    font-weight: bold;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+  color: var(--text-light);
+  margin: 0;
 }
+
 .profilemenu hr {
-    border-radius: 3px;
-    border: none;
-    height: 1px;
-    background: white;
+  border: none;
+  height: 1px;
+  background: var(--glass-border);
+  margin: 0;
 }
 
-.pmenusec{
-    margin: 3px 0px;
+.pmenusec {
+  display: flex;
+  flex-direction: column;
 }
 
-.pmenusec button{
-    cursor: pointer;
-    text-align: center;
-    width: 100%;
-    padding: 5px 0px;
-    color: whitesmoke;
-    padding: 5px 10px;
-    background-color: transparent;
-    border: none;
+.pmenusec button {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.pmenusec button:hover:not(:disabled){
-    background-color: rgb(63, 63, 63);
+.pmenusec button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.pmenusec button:disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-.del{
-    color: rgb(255, 19, 19);
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+.del {
+  color: var(--accent);
+  font-weight: 600;
 }
 
-.confirmdel:disabled,.notnow:disabled{
-    cursor: not-allowed;
-    color: black;
-    opacity: 0.6;
+.pmenusec button:hover .del {
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
 }
 
+/* Delete Modal */
+.delcontainer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: none; /* Changed via JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-@media screen and (max-width:431px) {
+.confirmcontainer {
+  background: rgba(20, 10, 15, 0.95);
+  border: 1px solid rgba(255, 0, 60, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 0, 60, 0.2);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-    .bg{
-        width: 50%;
-    }
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    .nav h1 {
-        font-size:27px;
-        padding: 3px 6px;
-    }
+.confirmcontainer p {
+  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
 
-    .confirmcontainer{
-        width: 90%;
-        margin: 0px;
-    }
-    
+.confirmationbtns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.confirmdel {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+}
+
+.notnow {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.confirmdel:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.6);
+}
+
+.notnow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .nav { padding: 15px 20px; }
+  .core { padding: 30px 20px; margin: 20px; }
+  .core h1 { font-size: 32px; }
+  .bg { width: 200px; margin-top: 120px; }
+  .btncontainer { flex-direction: column; width: 100%; }
+  .btncontainer button { width: 100%; }
 }
